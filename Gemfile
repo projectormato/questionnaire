@@ -13,11 +13,18 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '3.2.0.0'
 
+gem 'websocket-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'sqlite3'
+
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'awesome_print'
 end
 
 group :development do
