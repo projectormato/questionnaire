@@ -3,12 +3,13 @@ div class="jumbotron"
   h4 = link_to '回答を見る', result_path
 
 div class="container"
-  form id="anke"
+  form id="anke" class="form-group"
     div
       p 良かった点
-      textarea id="good"
+      textarea id="good" class="form-control"
 
     div
       p 悪かった点
-      textarea id="bad"
-    input type="submit" class="btn bg-primary" value="送信"
+      textarea id="bad" class="form-control"
+
+    input type="submit" class="btn btn-primary" value="送信"

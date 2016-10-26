@@ -3,12 +3,12 @@ class MessagesController < WebsocketRails::BaseController
   include ERB::Util
 
   def result
-    message[:msg].each do |k, v|
-      unless v.empty?
-        result = Result.create comment: v
-        Tag.create name: k, result: result
-        broadcast_message k + '_update', simple_format(h(v)) unless v.empty?
-      end
-    end
+    flg = message[:msg].select{|k, v| !v.empty?}.each do |k, v|
+      result = Result.create comment: v
+      Tag.create name: k, result: result
+      broadcast_message k + '_update', simple_format(h(v))
+    end.empty?
+
+    send_message :notice, '送信しました' unless flg
   end
 end

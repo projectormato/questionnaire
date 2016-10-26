@@ -18,6 +18,12 @@ $ ->
 
   $.each(ankes, (a) ->
     dispatcher.bind(ankes[a] + "_update", (data) ->
-      $(".result_" + ankes[a]).append($("<li>").html(data).addClass("list-group-item"))
+      li = $("<li>").css(opacity: 0)
+      $(".result_" + ankes[a]).append(li.html(data).addClass("list-group-item"))
+      li.animate({opacity: 100}, 8000)
     )
+  )
+
+  dispatcher.bind("notice", (data) ->
+    alert(data)
   )

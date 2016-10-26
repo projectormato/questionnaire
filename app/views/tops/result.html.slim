@@ -3,10 +3,10 @@ div class="jumbotron"
 
 div class="container"
   ul class="result_good list-group"
-    li class="list-group-item list-group-item-success" good
+    li class="list-group-item list-group-item-success" 良かった点
     - Tag.where(name: :good).each do |t|
       li class="list-group-item" = simple_format h t.result.comment
   ul class="result_bad list-group"
-    li class="list-group-item list-group-item-danger" bad
+    li class="list-group-item list-group-item-danger" 悪かった点
     - Tag.where(name: :bad).each do |t|
       li class="list-group-item" = simple_format h t.result.comment
