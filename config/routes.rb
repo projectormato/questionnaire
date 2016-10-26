@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'tops/create'
+
   get 'tops/index'
 
   get 'tops/result'
