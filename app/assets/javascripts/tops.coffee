@@ -25,5 +25,21 @@ $ ->
   )
 
   dispatcher.bind("notice", (data) ->
-    alert(data)
+    div = $("<div>").css({
+      background: "white",
+      position: "fixed",
+      left: "100%",
+      top: "0%",
+      width: "10%",
+      height: "10%",
+    }).html("<h3>#{data}</h3>").addClass("text-center", "h3")
+    $("body").append(div)
+    div.animate({
+      left: "-=" +div.width()+ "px",
+    }, 300, () ->
+      setTimeout(() ->
+        div.remove()
+      , 3000))
+    for a in ankes
+      $("#" + a).val("")
   )
