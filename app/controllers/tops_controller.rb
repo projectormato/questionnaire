@@ -4,7 +4,4 @@ class TopsController < ApplicationController
 
   def result
   end
-
-  def create
-  end
 end

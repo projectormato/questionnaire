@@ -1,2 +1,12 @@
-h1 Tops#result
-p Find me in app/views/tops/result.html.slim
+div class="jumbotron"
+  h2 回答
+
+div class="container"
+  ul class="result_good list-group"
+    li class="list-group-item list-group-item-success" good
+    - Tag.where(name: :good).each do |t|
+      li class="list-group-item" = simple_format h t.result.comment
+  ul class="result_bad list-group"
+    li class="list-group-item list-group-item-danger" bad
+    - Tag.where(name: :bad).each do |t|
+      li class="list-group-item" = simple_format h t.result.comment

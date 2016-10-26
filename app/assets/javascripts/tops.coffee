@@ -4,17 +4,20 @@
 
 $ ->
   dispatcher = new WebSocketRails(location.host + "/websocket")
-  form = $("#form")
-  text_input = $("#text_input")
-  msg_box = $("#msg_box")
 
-  form.submit((e) ->
-    dispatcher.trigger("send_message", {msg: text_input.val()})
-    text_input.val("")
+  ankes = ["good", "bad"]
+  $("#anke").submit((e) ->
+    result = {}
+    for a in ankes
+      $elem = $("#" + a)
+      result[a] = $elem.val()
+#      $elem.val("")
+    dispatcher.trigger("result_update", {msg: result})
     e.preventDefault()
   )
 
-  dispatcher.bind("spread_message", (data) ->
-    console.log(data)
-    msg_box.append $("<li>").text(data.msg)
+  $.each(ankes, (a) ->
+    dispatcher.bind(ankes[a] + "_update", (data) ->
+      $(".result_" + ankes[a]).append($("<li>").html(data).addClass("list-group-item"))
+    )
   )

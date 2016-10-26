@@ -1,4 +1,14 @@
-form id="form"
-  input id="text_input"
-  input type="submit"
-ul id="msg_box"
+div class="jumbotron"
+  h2 アンケート
+  h4 = link_to '回答を見る', result_path
+
+div class="container"
+  form id="anke"
+    div
+      p 良かった点
+      textarea id="good"
+
+    div
+      p 悪かった点
+      textarea id="bad"
+    input type="submit" class="btn bg-primary" value="送信"
