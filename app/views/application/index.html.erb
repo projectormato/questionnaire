@@ -5,7 +5,7 @@
 <ul id="msg_box">
 </ul>
 <script>
-  var dispatcher = new WebSocketRails("localhost:3000/websocket");//herokuにあげたらドメイン変えなきゃ
+  var dispatcher = new WebSocketRails(location.host + "/websocket");//herokuにあげたらドメイン変えなきゃ
   var form = document.getElementById("form");
   var text_input = document.getElementById("text_input");
   var msg_box = document.getElementById("msg_box");
