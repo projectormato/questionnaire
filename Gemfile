@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-
-ruby '2.3.1'
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -20,16 +18,13 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'sqlite3'
+  gem 'web-console', '~> 2.0'
 
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
   gem 'awesome_print'
-end
-
-group :development do
-  gem 'web-console', '~> 2.0'
 end
 
 group :production do
