@@ -19,12 +19,6 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
-
-  gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'pry-stack_explorer'
-  gem 'awesome_print'
 end
 
 group :production do
