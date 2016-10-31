@@ -14,7 +14,7 @@ gem 'slim-rails'
 
 gem 'websocket-rails'
 
-group :development, :test do
+group :development do
   gem 'byebug'
   gem 'spring'
   gem 'sqlite3'
